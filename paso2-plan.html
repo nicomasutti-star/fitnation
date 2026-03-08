@@ -125,7 +125,7 @@ window.addEventListener('beforeunload', () => { sessionStorage.removeItem('scrol
                           </div>
                           <div class="flex justify-between items-center text-sm">
                               <span class="text-gray-500 font-medium">Permanencia</span>
-                              <span class="font-bold text-black" id="permanence-basic">No obligatoria</span>
+                              <span class="font-bold text-black" id="permanence-basic">3 meses de fidelidad</span>
                           </div>
                       </div>
                   </div>
@@ -331,6 +331,7 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
         basicPrice: '$27',
         basicPeriod: '/mes',
         basicTotal: '',
+        basicPermanence: '3 meses de fidelidad',
         primePrice: '$32',
         primePeriod: '/mes',
         primeTotal: '',
@@ -342,6 +343,7 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
         basicPrice: '$23.14',
         basicPeriod: '/mes',
         basicTotal: 'Total: $162 (paga 6, accede 7)',
+        basicPermanence: '3 meses de fidelidad',
         primePrice: '$27.43',
         primePeriod: '/mes',
         primeTotal: 'Total: $192 (paga 6, accede 7)',
@@ -353,6 +355,7 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
         basicPrice: '$23.14',
         basicPeriod: '/mes',
         basicTotal: 'Total: $324 (paga 12, accede 14)',
+        basicPermanence: '3 meses de fidelidad',
         primePrice: '$27.43',
         primePeriod: '/mes',
         primeTotal: 'Total: $384 (paga 12, accede 14)',
@@ -371,6 +374,7 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
       const config = plansConfig[tabType];
       if (priceBasic) priceBasic.textContent = config.basicPrice;
       if (periodBasic) periodBasic.textContent = config.basicPeriod;
+      if (permanenceBasic) permanenceBasic.textContent = config.basicPermanence;
       if (pricePrime) pricePrime.textContent = config.primePrice;
       if (periodPrime) periodPrime.textContent = config.primePeriod;
       if (permanencePrime) permanencePrime.textContent = config.primePermanence;
