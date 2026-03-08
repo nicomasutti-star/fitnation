@@ -197,113 +197,158 @@
 </div>
 </section>
 <section class="py-20 bg-background-light dark:bg-background-dark" id="planes">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4 text-text-light dark:text-text-dark">Elige tu Plan</h2>
-<p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">Precios especiales de preventa. Congela tu tarifa de por vida.</p>
-<div class="inline-flex items-center bg-surface-light dark:bg-surface-dark p-1 rounded-full border border-gray-200 dark:border-gray-700">
-<button id="tab-mensual" class="px-6 py-2 rounded-full bg-white dark:bg-gray-600 shadow-sm text-sm font-bold text-text-light dark:text-text-dark transition-all">Mensual</button>
-<button id="tab-semestral" class="px-6 py-2 rounded-full text-sm font-bold text-gray-500 hover:text-black transition-all">Semestral</button>
-<button id="tab-anual" class="px-6 py-2 rounded-full text-sm font-bold text-gray-500 hover:text-black transition-all">Anual</button>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-<div class="bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-800 rounded-2xl p-8 flex flex-col">
-<h3 class="text-2xl font-black uppercase tracking-wide text-text-light dark:text-text-dark mb-2">Basic</h3>
-<p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Lo esencial para empezar</p>
-<div class="mb-8 flex items-baseline">
-<span id="price-basic" class="text-4xl font-black text-text-light dark:text-text-dark">$27</span>
-<span id="period-basic" class="text-gray-500 dark:text-gray-400 ml-2">/mes</span>
-</div>
-<ul class="space-y-4 mb-8 flex-1">
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-700 dark:text-gray-300">Acceso a sede Chacaíto</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-700 dark:text-gray-300">Áreas de musculación y cardio</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-700 dark:text-gray-300">Área funcional</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-700 dark:text-gray-300">Clases grupales incluidas</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-700 dark:text-gray-300">Vestuarios y lockers</span>
-</li>
-<li class="flex items-start opacity-50">
-<span class="material-icons text-gray-400 mr-3 text-xl">cancel</span>
-<span class="text-sm text-gray-500">Acceso multisede</span>
-</li>
-<li class="flex items-start opacity-50">
-<span class="material-icons text-gray-400 mr-3 text-xl">cancel</span>
-<span class="text-sm text-gray-500">Invitados por mes</span>
-</li>
-<li class="flex items-start opacity-50">
-<span class="material-icons text-gray-400 mr-3 text-xl">cancel</span>
-<span class="text-sm text-gray-500">Acceso Spa</span>
-</li>
-</ul>
-<a class="w-full block text-center border-2 border-gray-300 dark:border-gray-600 text-text-light dark:text-text-dark px-6 py-4 rounded-full font-bold hover:border-text-light dark:hover:border-text-dark transition-colors uppercase tracking-wide text-sm" href="#">
-                        Elegir Basic
-                    </a>
-</div>
-<div class="bg-black border-2 border-primary rounded-2xl p-8 flex flex-col relative shadow-2xl">
-<div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-black px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider">
-                        Más Popular
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4 text-text-light dark:text-text-dark">Elige tu Plan</h2>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">Precios especiales de preventa. Congela tu tarifa de por vida.</p>
+                    <div class="inline-flex items-center bg-surface-light dark:bg-surface-dark p-1 rounded-full border border-gray-200 dark:border-gray-700">
+                        <button id="tab-mensual" class="px-6 py-2 rounded-full bg-white dark:bg-gray-600 shadow-sm text-sm font-bold text-text-light dark:text-text-dark transition-all">Mensual</button>
+                        <button id="tab-semestral" class="px-6 py-2 rounded-full text-sm font-bold text-gray-500 hover:text-black transition-all">Semestral</button>
+                        <button id="tab-anual" class="px-6 py-2 rounded-full text-sm font-bold text-gray-500 hover:text-black transition-all">Anual</button>
                     </div>
-<h3 class="text-2xl font-black uppercase tracking-wide text-white mb-2">Prime</h3>
-<p class="text-gray-400 text-sm mb-6">La experiencia completa</p>
-<div class="mb-8 flex items-baseline">
-<span id="price-prime" class="text-4xl font-black text-white">$32</span>
-<span id="period-prime" class="text-gray-400 ml-2">/mes</span>
-</div>
-<ul class="space-y-4 mb-8 flex-1">
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-300">Acceso a TODAS las sedes</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-300">Áreas de musculación y cardio</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-300">Área funcional</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-300">Clases grupales ilimitadas</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-300">Vestuarios y lockers</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-300">Acceso multisede</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-300">Invita a un amigo 5 veces al mes</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons text-primary mr-3 text-xl">check_circle</span>
-<span class="text-sm text-gray-300">Sillones de masajes para recuperación muscular</span>
-</li>
-</ul>
-<a class="w-full block text-center bg-primary text-black px-6 py-4 rounded-full font-bold hover:opacity-90 transition-colors uppercase tracking-wide text-sm" href="#">
-                        Elegir Prime
-                    </a>
-</div>
-</div>
-</div>
-</section>
+                    <p id="promo-label" class="text-primary font-bold text-sm mt-4 hidden"></p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- BASIC -->
+                    <div class="bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-800 rounded-2xl p-8 flex flex-col">
+                        <h3 class="text-2xl font-black uppercase tracking-wide text-text-light dark:text-text-dark mb-2">Basic</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Lo esencial para empezar</p>
+                        <div class="mb-6 border-b border-gray-100 dark:border-white/10 pb-6 relative min-h-[160px]">
+                            <div id="price-container-basic">
+                                <span id="price-basic" class="text-4xl font-black text-text-light dark:text-text-dark">$27</span>
+                                <span id="period-basic" class="text-gray-500 dark:text-gray-400 font-medium">/mes</span>
+                                <div id="total-basic" class="text-sm font-bold text-gray-400 mt-1 hidden"></div>
+                            </div>
+                            <div class="mt-4 space-y-2">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-500 dark:text-gray-400 font-medium">Inscripción</span>
+                                    <div class="text-right">
+                                        <span class="text-gray-400 line-through mr-1">$10</span>
+                                        <span class="text-primary font-black">$0</span>
+                                        <span class="text-[10px] font-bold text-black ml-1 bg-primary px-1.5 py-0.5 rounded uppercase">Solo Preventa</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-500 dark:text-gray-400 font-medium">Mantenimiento anual</span>
+                                    <span class="font-bold text-text-light dark:text-text-dark">$20</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-500 dark:text-gray-400 font-medium">Permanencia</span>
+                                    <span id="permanence-basic" class="font-bold text-text-light dark:text-text-dark">3 meses de fidelidad</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Acceso a sede Chacaíto</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Áreas de musculación y cardio</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Área funcional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Clases grupales incluidas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Vestuarios y lockers</span>
+                            </li>
+                            <li class="flex items-start opacity-50">
+                                <span class="material-icons text-gray-400 mr-3 text-xl">cancel</span>
+                                <span class="text-sm text-gray-500">Acceso multisede</span>
+                            </li>
+                            <li class="flex items-start opacity-50">
+                                <span class="material-icons text-gray-400 mr-3 text-xl">cancel</span>
+                                <span class="text-sm text-gray-500">Invitados por mes</span>
+                            </li>
+                            <li class="flex items-start opacity-50">
+                                <span class="material-icons text-gray-400 mr-3 text-xl">cancel</span>
+                                <span class="text-sm text-gray-500">Acceso Spa</span>
+                            </li>
+                        </ul>
+                        <a class="w-full block text-center border-2 border-gray-300 dark:border-gray-600 text-text-light dark:text-text-dark px-6 py-4 rounded-full font-bold hover:border-text-light dark:hover:border-text-dark transition-colors uppercase tracking-wide text-sm" href="paso1-sede.html">
+                            Elegir Basic
+                        </a>
+                    </div>
+                    <!-- PRIME -->
+                    <div class="bg-black border-2 border-primary rounded-2xl p-8 flex flex-col relative shadow-2xl">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-black px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider">
+                            Más Popular
+                        </div>
+                        <h3 class="text-2xl font-black uppercase tracking-wide text-white mb-2">Prime</h3>
+                        <p class="text-gray-400 text-sm mb-6">La experiencia completa</p>
+                        <div class="mb-6 border-b border-white/10 pb-6 relative min-h-[160px]">
+                            <div id="price-container-prime">
+                                <span id="price-prime" class="text-4xl font-black text-white">$32</span>
+                                <span id="period-prime" class="text-gray-400 font-medium">/mes</span>
+                                <div id="total-prime" class="text-sm font-bold text-gray-400 mt-1 hidden"></div>
+                            </div>
+                            <div class="mt-4 space-y-2">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-400 font-medium">Inscripción</span>
+                                    <div class="text-right">
+                                        <span class="text-gray-500 line-through mr-1">$10</span>
+                                        <span class="text-primary font-black">$0</span>
+                                        <span class="text-[10px] font-bold text-black ml-1 bg-primary px-1.5 py-0.5 rounded uppercase">Solo Preventa</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-400 font-medium">Mantenimiento anual</span>
+                                    <span class="font-bold text-white">$20</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-400 font-medium">Permanencia</span>
+                                    <span id="permanence-prime" class="font-bold text-white">12 meses de fidelidad</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-1">
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-300">Acceso a TODAS las sedes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-300">Áreas de musculación y cardio</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-300">Área funcional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-300">Clases grupales ilimitadas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-300">Vestuarios y lockers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-300">Acceso multisede</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-300">Invita a un amigo 5 veces al mes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="material-icons text-primary mr-3 text-xl">check_circle</span>
+                                <span class="text-sm text-gray-300">Sillones de masajes para recuperación muscular</span>
+                            </li>
+                        </ul>
+                        <a class="w-full block text-center bg-primary text-black px-6 py-4 rounded-full font-bold hover:opacity-90 transition-colors uppercase tracking-wide text-sm" href="paso1-sede.html">
+                            Elegir Prime
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 <section class="py-24 bg-black text-white text-center relative overflow-hidden">
 <div class="absolute inset-0 flex items-center justify-center">
 <span class="text-[20rem] font-black leading-none uppercase whitespace-nowrap -rotate-12 text-[#1A1A1A]">Preventa</span>
@@ -437,62 +482,107 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
         });
     </script>
 <script>
-    const tabMensual = document.getElementById('tab-mensual');
-    const tabSemestral = document.getElementById('tab-semestral');
-    const tabAnual = document.getElementById('tab-anual');
-    const priceBasic = document.getElementById('price-basic');
-    const pricePrime = document.getElementById('price-prime');
-    const periodBasic = document.getElementById('period-basic');
-    const periodPrime = document.getElementById('period-prime');
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabMensual = document.getElementById('tab-mensual');
+        const tabSemestral = document.getElementById('tab-semestral');
+        const tabAnual = document.getElementById('tab-anual');
+        const promoLabel = document.getElementById('promo-label');
 
-    function updatePrices(basicPrice, primePrice, periodText, activeTab) {
-        if (!priceBasic || !pricePrime) return;
+        const prices = {
+            mensual: {
+                promo: '',
+                basicPrice: '$27',
+                basicPeriod: '/mes',
+                basicTotal: '',
+                basicPermanence: '3 meses de fidelidad',
+                primePrice: '$32',
+                primePeriod: '/mes',
+                primeTotal: '',
+                primePermanence: '12 meses de fidelidad',
+                showTotal: false
+            },
+            semestral: {
+                promo: 'Paga 6 meses, accede 7',
+                basicPrice: '$23.14',
+                basicPeriod: '/mes',
+                basicTotal: 'Total: $162 (paga 6, accede 7)',
+                basicPermanence: '3 meses de fidelidad',
+                primePrice: '$27.43',
+                primePeriod: '/mes',
+                primeTotal: 'Total: $192 (paga 6, accede 7)',
+                primePermanence: '12 meses de fidelidad',
+                showTotal: true
+            },
+            anual: {
+                promo: 'Paga 12 meses, accede 14',
+                basicPrice: '$23.14',
+                basicPeriod: '/mes',
+                basicTotal: 'Total: $324 (paga 12, accede 14)',
+                basicPermanence: '3 meses de fidelidad',
+                primePrice: '$27.43',
+                primePeriod: '/mes',
+                primeTotal: 'Total: $384 (paga 12, accede 14)',
+                primePermanence: '12 meses de fidelidad',
+                showTotal: true
+            }
+        };
 
-        priceBasic.textContent = basicPrice;
-        pricePrime.textContent = primePrice;
-        periodBasic.textContent = periodText;
-        periodPrime.textContent = periodText;
-
-        [tabMensual, tabSemestral, tabAnual].forEach(tab => {
-            if (tab) tab.className = "px-6 py-2 rounded-full text-sm font-bold text-gray-500 hover:text-black transition-all";
-        });
-        
-        if (activeTab) activeTab.className = "px-6 py-2 rounded-full bg-white dark:bg-gray-600 shadow-sm text-sm font-bold text-text-light dark:text-text-dark transition-all";
-    }
-
-    if (tabMensual) {
-        tabMensual.addEventListener('click', () => updatePrices('$27', '$32', '/mes', tabMensual));
-        tabSemestral.addEventListener('click', () => updatePrices('$23.14', '$27.43', '/mes (semestral)', tabSemestral));
-        tabAnual.addEventListener('click', () => updatePrices('$23.14', '$27.43', '/mes (anual)', tabAnual));
-    }
-
-    // Mobile Menu Controller
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    const mobileUnete = document.getElementById('mobile-unete');
-
-    function openMobileMenu() {
-        mobileMenu.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
-
-    function closeMobileMenu() {
-        mobileMenu.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-
-    if (mobileMenuBtn && mobileMenuClose && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        // Close menu when clicking a link
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-        if (mobileUnete) {
-            mobileUnete.addEventListener('click', closeMobileMenu);
+        function setActiveTab(tab) {
+            [tabMensual, tabSemestral, tabAnual].forEach(t => {
+                t.classList.remove('bg-white', 'dark:bg-gray-600', 'shadow-sm', 'text-text-light', 'dark:text-text-dark', 'text-black');
+                t.classList.add('text-gray-500');
+            });
+            tab.classList.add('bg-white', 'dark:bg-gray-600', 'shadow-sm', 'text-black');
+            tab.classList.remove('text-gray-500');
         }
-    }
+
+        function updatePrices(cycle) {
+            const p = prices[cycle];
+            document.getElementById('price-basic').textContent = p.basicPrice;
+            document.getElementById('period-basic').textContent = p.basicPeriod;
+            document.getElementById('price-prime').textContent = p.primePrice;
+            document.getElementById('period-prime').textContent = p.primePeriod;
+            document.getElementById('permanence-basic').textContent = p.basicPermanence;
+            document.getElementById('permanence-prime').textContent = p.primePermanence;
+
+            const totalBasic = document.getElementById('total-basic');
+            const totalPrime = document.getElementById('total-prime');
+            if (p.showTotal) {
+                totalBasic.textContent = p.basicTotal;
+                totalBasic.classList.remove('hidden');
+                totalPrime.textContent = p.primeTotal;
+                totalPrime.classList.remove('hidden');
+            } else {
+                totalBasic.classList.add('hidden');
+                totalPrime.classList.add('hidden');
+            }
+
+            if (promoLabel) {
+                if (p.promo) {
+                    promoLabel.textContent = p.promo;
+                    promoLabel.classList.remove('hidden');
+                } else {
+                    promoLabel.classList.add('hidden');
+                }
+            }
+        }
+
+        tabMensual.addEventListener('click', function () {
+            setActiveTab(tabMensual);
+            updatePrices('mensual');
+        });
+        tabSemestral.addEventListener('click', function () {
+            setActiveTab(tabSemestral);
+            updatePrices('semestral');
+        });
+        tabAnual.addEventListener('click', function () {
+            setActiveTab(tabAnual);
+            updatePrices('anual');
+        });
+
+        // Initialize
+        setActiveTab(tabMensual);
+        updatePrices('mensual');
+    });
 </script>
 </body></html>
