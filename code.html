@@ -459,7 +459,7 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
 <span class="material-icons text-3xl">chat</span>
 </a>
 <script>
-        document.querySelectorAll('section.py-20 button').forEach(button => {
+        document.querySelectorAll('section.py-20:not(#planes) button').forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
                 const icon = button.querySelector('.material-icons');
