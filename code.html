@@ -62,15 +62,24 @@
 </nav>
 </div>
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="flex-col justify-center items-center px-6 transition-all duration-300" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #000000; z-index: 9999;">
-    <button id="mobile-menu-close" class="absolute top-6 right-6 text-[#FFD100] p-2 hover:text-white transition-colors z-50">
+<div id="mobile-menu" class="flex-col pt-20 transition-all duration-300" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #000000; z-index: 9999; overflow-y: auto;">
+    <button id="mobile-menu-close" class="absolute top-6 right-6 text-[#FFFFFF] p-2 hover:text-[#FFD100] transition-colors z-50">
         <span class="material-icons text-4xl">close</span>
     </button>
-    <div class="flex flex-col space-y-8 w-full max-w-md mx-auto justify-center">
-        <a id="mobile-unete" class="block w-full bg-primary text-black px-6 py-4 rounded-full font-black text-xl hover:opacity-90 transition-colors uppercase tracking-wide text-center" href="paso1-sede.html">Únete Ahora</a>
-        <a class="block w-full text-[#FFFFFF] hover:text-primary text-[24px] font-bold font-sans transition-colors mobile-link py-4 text-center" href="#login">Tu Espacio</a>
-        <a class="block w-full text-[#FFFFFF] hover:text-primary text-[24px] font-bold font-sans transition-colors mobile-link py-4 text-center" href="sedes.html">Gimnasios</a>
-        <a class="block w-full text-[#FFFFFF] hover:text-primary text-[24px] font-bold font-sans transition-colors mobile-link py-4 text-center" href="#planes">Planes</a>
+    <div class="flex flex-col w-full max-w-md mx-auto mt-4">
+        <div class="px-[24px] mb-8 w-full">
+            <a id="mobile-unete" class="block w-full bg-[#FFD100] text-[#000000] py-4 rounded-full font-bold font-sans text-center hover:opacity-90 transition-colors uppercase tracking-wide" href="paso1-sede.html">Únete Ahora</a>
+        </div>
+        
+        <div class="flex flex-col w-full">
+            <a class="block w-full text-[#FFFFFF] hover:text-[#FFD100] text-[20px] font-semibold font-sans transition-colors py-4 px-[24px] text-left border-b border-[#3C3C3C]" href="#login">Tu Espacio</a>
+            <a class="block w-full text-[#FFFFFF] hover:text-[#FFD100] text-[20px] font-semibold font-sans transition-colors py-4 px-[24px] text-left border-b border-[#3C3C3C]" href="sedes.html">Gimnasios</a>
+            <a class="block w-full text-[#FFFFFF] hover:text-[#FFD100] text-[20px] font-semibold font-sans transition-colors py-4 px-[24px] text-left border-b border-[#3C3C3C]" href="#planes">Planes</a>
+            <a class="block w-full text-[#FFFFFF] hover:text-[#FFD100] text-[20px] font-semibold font-sans transition-colors py-4 px-[24px] text-left border-b border-[#3C3C3C]" href="#beneficios">Beneficios Prime</a>
+            <a class="block w-full text-[#FFFFFF] hover:text-[#FFD100] text-[20px] font-semibold font-sans transition-colors py-4 px-[24px] text-left border-b border-[#3C3C3C]" href="#promociones">Promociones</a>
+            <a class="block w-full text-[#FFFFFF] hover:text-[#FFD100] text-[20px] font-semibold font-sans transition-colors py-4 px-[24px] text-left border-b border-[#3C3C3C]" href="#whatsapp">WhatsApp</a>
+            <a class="block w-full text-[#FFFFFF] hover:text-[#FFD100] text-[20px] font-semibold font-sans transition-colors py-4 px-[24px] text-left" href="#contacto">Contáctanos (PQR)</a>
+        </div>
     </div>
 </div>
 </header>
