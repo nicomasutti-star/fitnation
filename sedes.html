@@ -57,11 +57,35 @@ window.addEventListener('beforeunload', () => {
 <button id="mobileMenuBtn" class="text-white p-2 md:hidden">
 <span class="material-icons">menu</span>
 </button>
-<nav class="hidden md:flex items-center space-x-8">
+<nav class="hidden md:flex items-center space-x-8 relative">
 <a class="text-white/80 hover:text-white text-sm font-semibold transition-colors" href="code.html#login">Tu Espacio</a>
 <a class="text-primary hover:text-white text-sm font-semibold transition-colors border-b-2 border-primary pb-1" href="sedes.html">Gimnasios</a>
 <a class="text-white/80 hover:text-white text-sm font-semibold transition-colors" href="code.html#planes">Planes</a>
 <a class="bg-primary text-black px-6 py-2 rounded-full font-bold text-sm hover:opacity-90 transition-colors uppercase tracking-wide" href="code.html#unete">Únete Ahora</a>
+<button id="desktopMenuBtn" class="text-white p-2 hover:text-[#FFD100] transition-colors">
+    <span class="material-icons">menu</span>
+</button>
+
+<!-- Desktop Menu Dropdown -->
+<div id="desktop-menu" class="absolute top-[60px] right-0 w-[280px] bg-[#000000] border border-[#3C3C3C] rounded-b-[8px] shadow-2xl flex-col transition-all duration-200" style="display: none; z-index: 1000;">
+    <button id="desktop-menu-close" class="absolute top-4 right-4 text-[#FFFFFF] hover:text-[#FFD100] transition-colors z-50">
+        <span class="material-icons">close</span>
+    </button>
+    
+    <div class="px-6 mt-14 mb-4">
+        <a class="desktop-unete block w-full bg-[#FFD100] text-[#000000] py-3 rounded-full font-bold font-sans text-center text-sm hover:opacity-90 transition-colors uppercase tracking-wide" href="paso1-sede.html">Únete Ahora</a>
+    </div>
+    
+    <div class="flex flex-col w-full pb-4">
+        <a class="desktop-link block w-full text-[#FFFFFF] hover:text-[#FFD100] text-sm font-semibold font-sans transition-colors py-3 px-6 text-left border-b border-[#3C3C3C]/50" href="code.html#login">Tu Espacio</a>
+        <a class="desktop-link block w-full text-[#FFFFFF] hover:text-[#FFD100] text-sm font-semibold font-sans transition-colors py-3 px-6 text-left border-b border-[#3C3C3C]/50" href="sedes.html">Gimnasios</a>
+        <a class="desktop-link block w-full text-[#FFFFFF] hover:text-[#FFD100] text-sm font-semibold font-sans transition-colors py-3 px-6 text-left border-b border-[#3C3C3C]/50" href="code.html#planes">Planes</a>
+        <a class="desktop-link block w-full text-[#FFFFFF] hover:text-[#FFD100] text-sm font-semibold font-sans transition-colors py-3 px-6 text-left border-b border-[#3C3C3C]/50" href="code.html#beneficios">Beneficios Prime</a>
+        <a class="desktop-link block w-full text-[#FFFFFF] hover:text-[#FFD100] text-sm font-semibold font-sans transition-colors py-3 px-6 text-left border-b border-[#3C3C3C]/50" href="code.html#promociones">Promociones</a>
+        <a class="desktop-link block w-full text-[#FFFFFF] hover:text-[#FFD100] text-sm font-semibold font-sans transition-colors py-3 px-6 text-left border-b border-[#3C3C3C]/50" href="code.html#whatsapp">WhatsApp</a>
+        <a class="desktop-link block w-full text-[#FFFFFF] hover:text-[#FFD100] text-sm font-semibold font-sans transition-colors py-3 px-6 text-left" href="code.html#contacto">Contáctanos (PQR)</a>
+    </div>
+</div>
 </nav>
 </div>
 <!-- Mobile Menu Overlay -->
@@ -241,6 +265,7 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const desktopMenuBtn = document.getElementById('desktopMenuBtn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
 
@@ -249,6 +274,39 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
                 mobileMenu.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
             });
+            
+            // Desktop Menu Dropdown Controller
+            const desktopMenu = document.getElementById('desktop-menu');
+            const desktopMenuClose = document.getElementById('desktop-menu-close');
+            const desktopLinks = document.querySelectorAll('.desktop-link, .desktop-unete');
+
+            if (desktopMenuBtn && desktopMenu && desktopMenuClose) {
+                desktopMenuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent closing immediately if document click listener exists
+                    if (desktopMenu.style.display === 'none' || desktopMenu.style.display === '') {
+                        desktopMenu.style.display = 'flex';
+                    } else {
+                        desktopMenu.style.display = 'none';
+                    }
+                });
+
+                desktopMenuClose.addEventListener('click', function() {
+                    desktopMenu.style.display = 'none';
+                });
+
+                desktopLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        desktopMenu.style.display = 'none';
+                    });
+                });
+                
+                // Close on outside click
+                document.addEventListener('click', function(e) {
+                    if (desktopMenu.style.display === 'flex' && !desktopMenu.contains(e.target) && e.target !== desktopMenuBtn && !desktopMenuBtn.contains(e.target)) {
+                        desktopMenu.style.display = 'none';
+                    }
+                });
+            }
 
             mobileMenuClose.addEventListener('click', () => {
                 mobileMenu.style.display = 'none';
