@@ -215,7 +215,7 @@ window.addEventListener('beforeunload', () => { sessionStorage.removeItem('scrol
                       </li>
                   </ul>
                   
-                  <a href="paso3-pago.html" class="block w-full text-center bg-black text-white font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-gray-800 transition-colors mt-auto">
+                  <a id="btn-select-basic" href="paso3-pago.html?plan=basic&periodo=mensual&sede=Chaca%C3%ADto" class="block w-full text-center bg-black text-white font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-gray-800 transition-colors mt-auto">
                       ELEGIR BASIC
                   </a>
               </div>
@@ -292,7 +292,7 @@ window.addEventListener('beforeunload', () => { sessionStorage.removeItem('scrol
                       </li>
                   </ul>
                   
-                  <a href="paso3-pago.html" class="block w-full text-center bg-[#FFD100] text-black font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-[#e6bd00] transition-colors mt-auto text-lg">
+                  <a id="btn-select-prime" href="paso3-pago.html?plan=prime&periodo=mensual&sede=Chaca%C3%ADto" class="block w-full text-center bg-[#FFD100] text-black font-bold uppercase tracking-wider py-4 rounded-lg hover:bg-[#e6bd00] transition-colors mt-auto text-lg">
                       ELEGIR PRIME
                   </a>
               </div>
@@ -428,6 +428,13 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
       if (pricePrime) pricePrime.textContent = config.primePrice;
       if (periodPrime) periodPrime.textContent = config.primePeriod;
       if (permanencePrime) permanencePrime.textContent = config.primePermanence;
+
+      // Update buttons URLs
+      const btnBasic = document.getElementById('btn-select-basic');
+      const btnPrime = document.getElementById('btn-select-prime');
+      if (btnBasic) btnBasic.href = `paso3-pago.html?plan=basic&periodo=${tabType}&sede=Chaca%C3%ADto`;
+      if (btnPrime) btnPrime.href = `paso3-pago.html?plan=prime&periodo=${tabType}&sede=Chaca%C3%ADto`;
+
       if (config.showTotal) {
         if (totalBasic) { totalBasic.textContent = config.basicTotal; totalBasic.classList.remove('hidden'); }
         if (totalPrime) { totalPrime.textContent = config.primeTotal; totalPrime.classList.remove('hidden'); }
@@ -449,7 +456,15 @@ Redefiniendo el estándar del fitness en Latinoamérica con instalaciones premiu
     if (tabSemestral) tabSemestral.addEventListener('click', () => setActiveTab('semestral', tabSemestral));
     if (tabAnual) tabAnual.addEventListener('click', () => setActiveTab('anual', tabAnual));
 
-    setActiveTab('mensual', tabMensual);
+    // Initialize based on URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const modality = (urlParams.get('modalidad') || urlParams.get('periodo') || 'mensual').toLowerCase();
+    
+    let tabToActivate = tabMensual;
+    if (modality === 'semestral') tabToActivate = tabSemestral;
+    else if (modality === 'anual') tabToActivate = tabAnual;
+
+    setActiveTab(modality, tabToActivate);
 
     // Mobile Menu Controller
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');

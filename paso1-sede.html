@@ -196,9 +196,20 @@ window.addEventListener('beforeunload', () => { sessionStorage.removeItem('scrol
           </div>
           
           <div class="flex justify-center">
-             <a href="paso2-plan.html" class="inline-block w-full max-w-[480px] text-center bg-primary text-black font-bold uppercase tracking-wider py-4 rounded-lg hover:opacity-90 transition-opacity text-lg">
+             <a id="btn-continuar-sede" href="paso2-plan.html" class="inline-block w-full max-w-[480px] text-center bg-primary text-black font-bold uppercase tracking-wider py-4 rounded-lg hover:opacity-90 transition-opacity text-lg">
                  CONTINUAR →
              </a>
+             <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const params = new URLSearchParams(window.location.search);
+                    const plan = params.get('plan') || 'prime';
+                    const modalidad = params.get('modalidad') || 'mensual';
+                    const btnContinuar = document.getElementById('btn-continuar-sede');
+                    if (btnContinuar) {
+                        btnContinuar.href = `paso2-plan.html?plan=${plan}&modalidad=${modalidad}&sede=Chaca%C3%ADto`;
+                    }
+                });
+             </script>
           </div>
       </div>
   </section>

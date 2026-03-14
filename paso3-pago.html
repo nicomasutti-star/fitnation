@@ -207,32 +207,33 @@ window.addEventListener('beforeunload', () => { sessionStorage.removeItem('scrol
                       <div class="space-y-4 mb-6 text-sm font-medium">
                           <div class="flex justify-between items-center bg-white/5 p-3 rounded-lg">
                               <span class="text-white/60">Plan seleccionado</span>
-                              <span class="font-bold text-primary">PRIME</span>
+                              <span id="summary-plan" class="font-bold text-primary">—</span>
                           </div>
                           <div class="flex justify-between items-center bg-white/5 p-3 rounded-lg">
-                              <span class="text-white/60">Sede principal</span>
-                              <span class="font-bold text-white">Chacaíto</span>
+                              <span class="text-white/60">Período</span>
+                              <span id="summary-periodo" class="font-bold text-white">—</span>
+                          </div>
+                          <div class="flex justify-between items-center bg-white/5 p-3 rounded-lg">
+                              <span class="text-white/60">Inscripción</span>
+                              <span class="font-bold text-primary">$0 — Promo Fundadores</span>
                           </div>
                       </div>
 
-                      <div class="space-y-3 mb-6 pb-6 border-b border-white/20 text-sm">
-                          <div class="flex justify-between items-center">
-                              <span class="text-white">Primer mes</span>
-                              <span class="font-bold text-primary uppercase">GRATIS</span>
-                          </div>
-                          <div class="flex justify-between items-center">
-                              <span class="text-white/60">Mes 2 en adelante</span>
-                              <span class="font-medium text-white">$30.00/mes</span>
-                          </div>
-                      </div>
+                      <!-- Desglose dinámico -->
+                      <div id="price-breakdown" class="space-y-3 mb-6 pb-6 border-b border-white/20 text-sm"></div>
                       
-                      <div class="mb-8">
+                      <div class="mb-6">
                           <div class="flex justify-between items-end mb-2">
                               <span class="text-lg font-bold text-white/80 uppercase">Hoy pagas</span>
-                              <span class="text-4xl font-black text-white">$0</span>
+                              <span id="summary-hoy" class="text-4xl font-black text-white">—</span>
                           </div>
-                          <p class="text-xs text-primary font-bold text-right">Inscripción: Gratis — Promo Fundadores</p>
+                          <p id="summary-hoy-nota" class="text-xs text-primary font-bold text-right"></p>
                       </div>
+
+                      <!-- Nota mantenimiento anual -->
+                      <p class="text-xs text-white/50 italic mb-6">
+                          Mantenimiento anual $20 se cobra una sola vez al segundo mes y se renueva anualmente.
+                      </p>
 
                       <button class="w-full text-center bg-primary text-black font-black uppercase tracking-wider py-4 rounded-lg hover:opacity-90 transition-opacity text-lg mb-4">
                           CONFIRMAR MEMBRESÍA →
@@ -366,6 +367,99 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+</script>
+<script>
+(function () {
+    // -------------------------------------------------------
+    // Promo Fundadores — lógica de precios para el resumen
+    // -------------------------------------------------------
+    var params  = new URLSearchParams(window.location.search);
+    var plan    = (params.get('plan')    || 'prime').toLowerCase();
+    var periodo = (params.get('periodo') || 'mensual').toLowerCase();
+
+    // Etiquetas legibles
+    var planLabel    = plan    === 'basic'     ? 'BASIC'     : 'PRIME';
+    var periodoLabel = periodo === 'mensual'   ? 'Mensual'   :
+                       periodo === 'semestral' ? 'Semestral' : 'Anual';
+
+    document.getElementById('summary-plan').textContent    = planLabel;
+    document.getElementById('summary-periodo').textContent = periodoLabel;
+
+    // -------------------------------------------------------
+    // Tabla de precios Promo Fundadores
+    // -------------------------------------------------------
+    var precios = {
+        basic: {
+            mensual: {
+                hoy:      '$27.00',
+                hoyNota:  'Primera mensualidad — Inscripción $0',
+                rows: [
+                    { label: 'Mes 2',              value: '$47.00 ($27 + $20 mant. anual)' },
+                    { label: 'Mes 3 en adelante',  value: '$27.00/mes' }
+                ]
+            },
+            semestral: {
+                hoy:      '$162.00',
+                hoyNota:  '6 meses pagados, accedes 7 — Inscripción $0',
+                rows: [
+                    { label: 'Mes 2 (mant. anual)', value: '$20.00 — cargo único anual' },
+                    { label: 'Renovación semestral', value: '$162.00 cada 6 meses' }
+                ]
+            },
+            anual: {
+                hoy:      '$324.00',
+                hoyNota:  '12 meses pagados, accedes 14 — Inscripción $0',
+                rows: [
+                    { label: 'Mes 2 (mant. anual)', value: '$20.00 — cargo único anual' },
+                    { label: 'Renovación anual',     value: '$324.00 cada año' }
+                ]
+            }
+        },
+        prime: {
+            mensual: {
+                hoy:      '$0',
+                hoyNota:  'Primer mes GRATIS — Inscripción $0',
+                rows: [
+                    { label: 'Mes 2',              value: '$52.00 ($32 + $20 mant. anual)' },
+                    { label: 'Mes 3 en adelante',  value: '$32.00/mes' }
+                ]
+            },
+            semestral: {
+                hoy:      '$192.00',
+                hoyNota:  '6 meses pagados, accedes 7 — Inscripción $0',
+                rows: [
+                    { label: 'Mes 2 (mant. anual)', value: '$20.00 — cargo único anual' },
+                    { label: 'Renovación semestral', value: '$192.00 cada 6 meses' }
+                ]
+            },
+            anual: {
+                hoy:      '$384.00',
+                hoyNota:  '12 meses pagados, accedes 14 — Inscripción $0',
+                rows: [
+                    { label: 'Mes 2 (mant. anual)', value: '$20.00 — cargo único anual' },
+                    { label: 'Renovación anual',     value: '$384.00 cada año' }
+                ]
+            }
+        }
+    };
+
+    var config = (precios[plan] || precios.prime)[periodo] || precios.prime.mensual;
+
+    // Hoy pagas
+    document.getElementById('summary-hoy').textContent      = config.hoy;
+    document.getElementById('summary-hoy-nota').textContent = config.hoyNota;
+
+    // Desglose de cuotas futuras
+    var breakdown = document.getElementById('price-breakdown');
+    config.rows.forEach(function (row) {
+        var div = document.createElement('div');
+        div.className = 'flex justify-between items-center';
+        div.innerHTML =
+            '<span class="text-white/70">' + row.label + '</span>' +
+            '<span class="font-medium text-white">' + row.value + '</span>';
+        breakdown.appendChild(div);
+    });
+})();
 </script>
 </body>
 </html>
